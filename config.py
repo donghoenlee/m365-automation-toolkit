@@ -19,7 +19,7 @@ GRAPH_CLIENT_ID = os.getenv("GRAPH_CLIENT_ID", "")
 GRAPH_CLIENT_SECRET = os.getenv("GRAPH_CLIENT_SECRET", "")
 
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
-CLAUDE_MODEL = os.getenv("CLAUDE_MODEL", "claude-sonnet-4-5")
+CLAUDE_MODEL = os.getenv("CLAUDE_MODEL", "claude-haiku-4-5")
 
 MOCK_DB_PATH = os.path.join(os.path.dirname(__file__), "data", "mock_db.json")
 INACTIVE_DAYS_THRESHOLD = int(os.getenv("INACTIVE_DAYS_THRESHOLD", "90"))
