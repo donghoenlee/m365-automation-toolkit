@@ -17,7 +17,9 @@ Microsoft Graph API로 대부분 자동화할 수 있는 작업인데도, 실무
 ### 1. 사용자 라이프사이클 자동화
 입사자 온보딩(계정 생성 → 라이선스 할당 → 그룹 추가)과 퇴사자 오프보딩(계정 비활성화 → 로그인 세션 강제 종료)을 한 번의 실행으로 처리합니다. 각 단계의 성공/실패를 개별적으로 기록해, 중간에 한 단계가 실패해도 전체를 처음부터 다시 하지 않고 실패한 부분만 확인할 수 있습니다.
 
-![사용자 라이프사이클 자동화 - 온보딩 실행 결과](docs/screenshots/onboarding.png)
+<p align="center">
+  <img src="docs/screenshots/onboarding.png" width="640" alt="사용자 라이프사이클 자동화 - 온보딩 실행 결과">
+</p>
 
 ### 2. 라이선스·보안 감사 리포트
 - **라이선스 사용률**: 구매했지만 배정되지 않은 라이선스(비용 낭비 후보) 자동 집계
@@ -26,12 +28,16 @@ Microsoft Graph API로 대부분 자동화할 수 있는 작업인데도, 실무
 
 매달 엑셀로 사용자 목록을 내려받아 눈으로 확인하던 작업을 대체합니다. 모든 리포트는 CSV로 다운로드할 수 있습니다.
 
-![라이선스·보안 감사 - MFA 미등록 계정 리포트](docs/screenshots/audit.png)
+<p align="center">
+  <img src="docs/screenshots/audit.png" width="640" alt="라이선스·보안 감사 - MFA 미등록 계정 리포트">
+</p>
 
 ### 3. 헬프데스크 어시스턴트 (Claude API)
 IT 헬프데스크로 들어오는 문의를 Claude API가 자동으로 분류(카테고리·우선순위·관리자 조치 필요 여부)하고, 담당자가 바로 검토·발송할 수 있는 답변 초안까지 생성합니다. 정해진 JSON 스키마로만 응답하도록 시스템 프롬프트를 설계해, LLM 출력을 안정적으로 파싱할 수 있게 했습니다.
 
-![헬프데스크 어시스턴트 - Claude API 분류 및 답변 초안 결과](docs/screenshots/helpdesk.png)
+<p align="center">
+  <img src="docs/screenshots/helpdesk.png" width="640" alt="헬프데스크 어시스턴트 - Claude API 분류 및 답변 초안 결과">
+</p>
 
 ## 아키텍처
 
