@@ -8,7 +8,7 @@
 
 Microsoft 365 환경에서 IT 인프라 운영 담당자가 반복적으로 처리하는 업무를 자동화하는 Streamlit 대시보드입니다. 여러 관리 포털(Entra 관리센터·Exchange 관리센터·라이선스 포털)을 오가며 수작업으로 처리하던 일을, 하나의 화면에서 한 번에 처리하도록 만들었습니다.
 
-**🔗 [라이브 데모 바로가기](https://m365-automation-toolkit-aei44hesyq4c4gdw7ep2eu.streamlit.app/)** — Google/GitHub 계정으로 무료 로그인 후 바로 체험 가능 (실제 M365 테넌트 없이 목업 데이터로 전체 기능 동작)
+**🔗 [라이브 데모 바로가기](https://m365-automation-toolkit-aei44hesyq4c4gdw7ep2eu.streamlit.app/)** — Google/GitHub 계정으로 로그인 후 바로 체험 가능 (실제 M365 테넌트 없이 목업 데이터로 전체 기능 동작)
 
 ## 왜 만들었나
 
