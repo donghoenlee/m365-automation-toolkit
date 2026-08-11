@@ -1,0 +1,7 @@
+[
+  {"id": "T-1001", "requester": "이서연 (Sales)", "subject": "비밀번호 초기화 요청", "body": "안녕하세요, 계정 비밀번호를 잊어버려서 로그인이 안 됩니다. 초기화 부탁드립니다."},
+  {"id": "T-1002", "requester": "정하은 (Engineering)", "subject": "Power BI 라이선스 신청", "body": "팀 대시보드 작업 때문에 Power BI Pro 라이선스가 필요합니다. 할당 가능할까요?"},
+  {"id": "T-1003", "requester": "최지우 (HR)", "subject": "Outlook에서 공유 메일함이 안 보여요", "body": "HR 공유 메일함 접근 권한이 사라진 것 같습니다. 어제까지는 잘 보였는데 오늘부터 목록에 없습니다."},
+  {"id": "T-1004", "requester": "박도윤 (Finance)", "subject": "MFA 재설정 필요", "body": "휴대폰을 새로 개통해서 인증 앱을 다시 등록해야 하는데 어떻게 해야 하나요?"},
+  {"id": "T-1005", "requester": "강수아 (Sales)", "subject": "VPN 연결 오류", "body": "재택근무 중인데 사내 VPN 접속이 계속 타임아웃 됩니다. 어제는 정상이었습니다."}
+]
