@@ -54,6 +54,14 @@ flowchart LR
 
 업무 로직(`modules/*`)은 `GraphClient` 추상 인터페이스에만 의존합니다. 실제 구현체는 로컬 JSON 기반 `MockGraphClient`와 MSAL 기반 `RealGraphClient` 두 가지이며, `.env`의 `USE_MOCK_GRAPH` 값만 바꾸면 코드 수정 없이 서로 교체됩니다. 이 설계 덕분에 실제 M365 테넌트 없이도 전체 기능을 목업 데이터로 검증할 수 있고, 실 테넌트가 준비되면 그대로 연결됩니다.
 
+## 보안을 고려한 설계
+
+- **비밀정보 분리**: API 키·테넌트 인증정보는 `.env`로만 관리하고 `.gitignore`로 저장소에서 제외. 코드에 하드코딩된 credential 없음
+- **안전한 임시 비밀번호 생성**: 온보딩 시 발급하는 임시 비밀번호는 `random` 대신 [`secrets`](modules/lifecycle.py) 모듈로 생성 — 예측 불가능한 값이 필요한 보안 토큰에 적합한 방식
+- **Mock/Real 인터페이스 분리**: 개발·테스트 단계에서 실제 테넌트에 잘못된 쓰기 요청이 나갈 위험을 원천 차단 (`USE_MOCK_GRAPH` 플래그로 명시적으로 전환해야만 실 API 호출)
+- **오프보딩 시 세션 강제 종료**: 계정 비활성화만으로는 이미 로그인된 세션이 살아있을 수 있어, `revoke_sign_in_sessions`를 별도 단계로 분리해 누락 방지
+- **공개 데모 남용 방지**: 라이브 데모는 세션당 Claude API 호출 횟수를 제한해, 악의적 반복 호출로 인한 비용 소진을 방지
+
 ## 기술 스택
 
 Python · Streamlit · Microsoft Graph API (MSAL) · Claude API (Anthropic) · pandas · pytest
