@@ -25,13 +25,21 @@ else:
     subject = st.text_input("제목", placeholder="비밀번호 초기화 요청")
     body = st.text_area("내용", placeholder="계정에 로그인이 안 됩니다...", height=100)
 
+MAX_DEMO_CALLS = 15
+if "classify_count" not in st.session_state:
+    st.session_state.classify_count = 0
+
 if st.button("분류 및 답변 초안 생성", type="primary"):
     if not subject or not body:
         st.error("제목과 내용을 입력하세요.")
+    elif st.session_state.classify_count >= MAX_DEMO_CALLS:
+        st.warning(f"데모 세션당 최대 {MAX_DEMO_CALLS}회까지 호출할 수 있습니다. 브라우저를 새로고침한 뒤 다시 시도해주세요.")
+        result = None
     else:
         with st.spinner("Claude가 문의를 분석하는 중..."):
             try:
                 result = helpdesk.classify_ticket(subject, body)
+                st.session_state.classify_count += 1
             except Exception as e:
                 st.error(f"분류 실패: {e}")
                 result = None
