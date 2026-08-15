@@ -43,14 +43,9 @@ IT 헬프데스크로 들어오는 문의를 Claude API가 자동으로 분류(�
 
 ## 아키텍처
 
-```mermaid
-flowchart LR
-    UI["Streamlit UI\napp.py / pages/"] --> MOD["업무 로직\nmodules/\nlifecycle · audit · helpdesk"]
-    MOD --> IFACE["GraphClient\n추상 인터페이스"]
-    IFACE --> MOCK["MockGraphClient\n로컬 JSON"]
-    IFACE --> REAL["RealGraphClient\nMSAL + Graph API"]
-    MOD --> CLAUDE["Claude API\n티켓 분류·답변 생성"]
-```
+<p align="center">
+  <img src="docs/diagrams/architecture.png" width="800" alt="M365 자동화 툴킷 아키텍처 다이어그램 - Streamlit UI, modules/, GraphClient 추상 인터페이스, Mock/Real 구현체, Claude API 연동 구조">
+</p>
 
 업무 로직(`modules/*`)은 `GraphClient` 추상 인터페이스에만 의존합니다. 실제 구현체는 로컬 JSON 기반 `MockGraphClient`와 MSAL 기반 `RealGraphClient` 두 가지이며, `.env`의 `USE_MOCK_GRAPH` 값만 바꾸면 코드 수정 없이 서로 교체됩니다. 이 설계 덕분에 실제 M365 테넌트 없이도 전체 기능을 목업 데이터로 검증할 수 있고, 실 테넌트가 준비되면 그대로 연결됩니다.
 
