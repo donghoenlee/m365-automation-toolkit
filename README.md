@@ -1,10 +1,6 @@
 # M365 관리 자동화 툴킷
 
-![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white)
-![Microsoft Graph](https://img.shields.io/badge/Microsoft%20Graph-API-0078D4?logo=microsoft&logoColor=white)
-![Claude API](https://img.shields.io/badge/Claude%20API-Anthropic-D97757)
-![Tests](https://img.shields.io/badge/tests-passing-brightgreen)
+![기술 스택](docs/diagrams/techstack-badges.png)
 
 Microsoft 365 환경에서 IT 인프라 운영 담당자가 반복적으로 처리하는 업무를 자동화하는 Streamlit 대시보드입니다. 여러 관리 포털(Entra 관리센터·Exchange 관리센터·라이선스 포털)을 오가며 수작업으로 처리하던 일을, 하나의 화면에서 한 번에 처리하도록 만들었습니다.
 
